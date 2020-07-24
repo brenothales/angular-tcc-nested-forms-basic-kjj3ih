@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <p>General:</p>
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name">
+
+  <app-form-address [formGroup]="form"></app-form-address>
+  
+  <button type="submit">Save</button>
+</form>
+
+<div style="margin-top: 2rem" *ngIf="formResult">
+  <p>Form Result:</p>
+  {{formResult | json}}
+</div>
